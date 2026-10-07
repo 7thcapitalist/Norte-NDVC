@@ -1,0 +1,807 @@
+{
+ "updated": "Oct 7, 2026",
+ "log": [
+  [
+   "Oct 7",
+   "Outreach started",
+   "The team picked the first 10 founders to reach and is finding a warm intro for each. Five new names per member are due this week."
+  ],
+  [
+   "Oct 6",
+   "35 names sourced",
+   "Seven members submitted five founders each: 31 unique people and teams. We tightened the profile toward earlier founders based in the US."
+  ],
+  [
+   "Sep 29",
+   "Team kickoff",
+   "Introduction to Norte and the pure-follower model. Every member wrote up their read of Norte before the meeting."
+  ],
+  [
+   "Sep 22",
+   "Kickoff with Norte",
+   "João Vitor Carvalho and João Camara set the profile, this page as the main output, and monthly meetings."
+  ]
+ ],
+ "founders": [
+  {
+   "id": "f0",
+   "stage": "sourced",
+   "call": null,
+   "n": "Felipe Makoto Shimamura Silva",
+   "co": "Stealth startup",
+   "what": "Stealth since July 2026. Role and sector still to confirm.",
+   "prof": "A",
+   "loc": "MIT · São Paulo",
+   "school": "MIT, class of 2029",
+   "cs": "Stealth",
+   "raised": "None known",
+   "fund": "pre",
+   "read": "top",
+   "why": "International Mathematical Olympiad gold medalist, at MIT, already building. Exactly the early profile.",
+   "by": [
+    "Fred Camargo"
+   ],
+   "li": [
+    [
+     "Felipe",
+     "https://www.linkedin.com/in/felipe-makoto-shimamura-silva-870210359/"
+    ]
+   ]
+  },
+  {
+   "id": "f1",
+   "stage": "sourced",
+   "call": null,
+   "n": "Guilherme Zart Hoher",
+   "co": "Stealth fintech",
+   "what": "Building in fintech, in stealth since January 2026.",
+   "prof": "A",
+   "loc": "From Curitiba · Berkeley",
+   "school": "UC Berkeley (BS)",
+   "cs": "Stealth",
+   "raised": "None known",
+   "fund": "pre",
+   "read": "top",
+   "why": "Endeavor, Atlantico and BRASA background. Operator-style founder in Norte's core sector, just out of college.",
+   "by": [
+    "Fred Camargo"
+   ],
+   "li": [
+    [
+     "Guilherme",
+     "https://www.linkedin.com/in/guilhermehoher/"
+    ]
+   ]
+  },
+  {
+   "id": "f2",
+   "stage": "sourced",
+   "call": null,
+   "n": "Lucas Mantovani",
+   "co": "Velvet",
+   "what": "Datasets and models that help AI interact through conversation, audio and video.",
+   "prof": "A",
+   "loc": "San Francisco",
+   "school": "University of Chicago (CS, Cognitive Science)",
+   "cs": "Early",
+   "raised": "Unknown",
+   "fund": "unknown",
+   "read": "top",
+   "why": "Young Brazilian founder and CEO building for the world. Proposed and shipped an AI feature as a Meta intern.",
+   "by": [
+    "Denis Neto"
+   ],
+   "li": []
+  },
+  {
+   "id": "f3",
+   "stage": "sourced",
+   "call": null,
+   "n": "Ignacio Berardi",
+   "co": "Rexi",
+   "what": "AI reconciliation for banks, fintechs and payment companies: matches transactions across systems and investigates mismatches.",
+   "prof": "A",
+   "loc": "New York · Buenos Aires",
+   "school": "Harvard MBA",
+   "cs": "Pre-seed",
+   "raised": "US$ 1.2M pre-seed (Pear, NFX, Underscore, Flybridge). Seed planned H2 2026",
+   "fund": "raising",
+   "read": "top",
+   "why": "Built the reconciliation process at Comun, then started a company on that exact problem. Sourced independently by three members.",
+   "by": [
+    "Rafael Rocha",
+    "Denis Neto",
+    "Mariana Castedo"
+   ],
+   "li": [
+    [
+     "Ignacio",
+     "https://www.linkedin.com/in/ignacioberardi/"
+    ]
+   ]
+  },
+  {
+   "id": "f4",
+   "stage": "sourced",
+   "call": null,
+   "n": "Rodrigo Mosqueira & Oscar Aguilar",
+   "co": "Bizmark",
+   "what": "AI that runs purchasing and production planning for factories.",
+   "prof": "A",
+   "loc": "US",
+   "school": "",
+   "cs": "Post-YC (Summer 2026)",
+   "raised": "YC only, no round announced",
+   "fund": "pre",
+   "read": "top",
+   "why": "Just finished YC with no round yet. The right moment to meet.",
+   "by": [
+    "Ian Ngo"
+   ],
+   "li": [
+    [
+     "Rodrigo",
+     "https://www.linkedin.com/in/moag/"
+    ],
+    [
+     "Oscar",
+     "https://www.linkedin.com/in/oscar-t-aguilar/"
+    ]
+   ]
+  },
+  {
+   "id": "f5",
+   "stage": "sourced",
+   "call": null,
+   "n": "Luis Olave",
+   "co": "Altur",
+   "what": "Voice and text AI agents that negotiate and collect debt for lenders.",
+   "prof": "A",
+   "loc": "SF Bay Area · Mexico City",
+   "school": "",
+   "cs": "Post-YC (Summer 2025)",
+   "raised": "About US$ 225K (Platanus, YC)",
+   "fund": "pre",
+   "read": "top",
+   "why": "Ran debt collection in Mexico for two years before building AI for it. Reports about US$ 1M ARR in 8 months.",
+   "by": [
+    "Mariana Castedo"
+   ],
+   "li": [
+    [
+     "Luis",
+     "https://www.linkedin.com/in/luis-olave/"
+    ]
+   ]
+  },
+  {
+   "id": "f6",
+   "stage": "sourced",
+   "call": null,
+   "n": "Guilherme Ávila",
+   "co": "Stealth",
+   "what": "\"Building & Investing\" at a stealth company since November 2025.",
+   "prof": "A",
+   "loc": "Greater Boston",
+   "school": "Harvard (visiting student), Estudar Fellow",
+   "cs": "Stealth",
+   "raised": "None known",
+   "fund": "pre",
+   "read": "good",
+   "why": "Early and in the US. Sector and founder role still to confirm.",
+   "by": [
+    "Fred Camargo"
+   ],
+   "li": [
+    [
+     "Guilherme",
+     "https://www.linkedin.com/in/guilherme-ferreira-lima-de-avila/"
+    ]
+   ]
+  },
+  {
+   "id": "f7",
+   "stage": "sourced",
+   "call": null,
+   "n": "Bruno Azambuja",
+   "co": "Stealth",
+   "what": "Stealth role since February 2026.",
+   "prof": "A",
+   "loc": "Greater Boston",
+   "school": "Harvard (visiting student)",
+   "cs": "Stealth",
+   "raised": "None known",
+   "fund": "pre",
+   "read": "good",
+   "why": "Same early profile. Less evidence so far on what he is building.",
+   "by": [
+    "Fred Camargo"
+   ],
+   "li": [
+    [
+     "Bruno",
+     "https://www.linkedin.com/in/bruno-azambuja-carvalho/"
+    ]
+   ]
+  },
+  {
+   "id": "f8",
+   "stage": "sourced",
+   "call": null,
+   "n": "Marcelo Gutiérrez",
+   "co": "LlamitAI",
+   "what": "AI copilots for bank compliance and credit operations.",
+   "prof": "A",
+   "loc": "London · La Paz",
+   "school": "UCL (MSc Data Science)",
+   "cs": "Early",
+   "raised": "Undisclosed",
+   "fund": "closed",
+   "read": "good",
+   "why": "Bolivian founder building globally, used by about 30% of Bolivia's financial institutions, US pilots starting.",
+   "by": [
+    "Mariana Castedo"
+   ],
+   "li": [
+    [
+     "Marcelo",
+     "https://www.linkedin.com/in/marcelogutierrezmallea/"
+    ]
+   ]
+  },
+  {
+   "id": "f9",
+   "stage": "sourced",
+   "call": null,
+   "n": "Lucas Valeggiani Fuoco",
+   "co": "Fonder",
+   "what": "An AI treasurer for small and mid-sized companies: reconciliation, cash flow, payables and receivables.",
+   "prof": "A",
+   "loc": "Argentina",
+   "school": "",
+   "cs": "Pre-seed",
+   "raised": "US$ 500K round open (Latitud Ventures, angels)",
+   "fund": "raising",
+   "read": "good",
+   "why": "Lived the problem: managed treasury at his family's business. Check how much is built for outside Argentina.",
+   "by": [
+    "Rafael Rocha"
+   ],
+   "li": [
+    [
+     "Lucas",
+     "https://www.linkedin.com/in/lucas-valeggiani-fuoco-1b48407b/"
+    ]
+   ]
+  },
+  {
+   "id": "f10",
+   "stage": "sourced",
+   "call": null,
+   "n": "Nicolas Casaux",
+   "co": "Bianca AI",
+   "what": "Commercial intelligence for consumer-goods companies, turning sales data into actions.",
+   "prof": "A",
+   "loc": "Argentina · US, Mexico, Peru",
+   "school": "ITBA",
+   "cs": "Pre-seed",
+   "raised": "US$ 500K pre-seed (Magma, MatterScale)",
+   "fund": "closed",
+   "read": "good",
+   "why": "Already operating in the US. Experienced operator from the Coca-Cola ecosystem.",
+   "by": [
+    "Rafael Rocha"
+   ],
+   "li": [
+    [
+     "Nicolas",
+     "https://www.linkedin.com/in/nicolas-casaux/"
+    ]
+   ]
+  },
+  {
+   "id": "f11",
+   "stage": "sourced",
+   "call": null,
+   "n": "Rafael Pereira",
+   "co": "Zeom",
+   "what": "International banking: global account, investments and cross-border payments.",
+   "prof": "A",
+   "loc": "London, launching in Brazil",
+   "school": "",
+   "cs": "Pre-seed",
+   "raised": "About US$ 3M pre-seed (Fabric Ventures), to verify",
+   "fund": "closed",
+   "read": "good",
+   "why": "Brazilians building abroad with an international product, though the first market is Brazil.",
+   "by": [
+    "Rafael Prado"
+   ],
+   "li": [
+    [
+     "Rafael",
+     "https://br.linkedin.com/in/rafaelsantarita"
+    ]
+   ]
+  },
+  {
+   "id": "f12",
+   "stage": "sourced",
+   "call": null,
+   "n": "Hugo Mathecowitsch",
+   "co": "Tools for the Commons",
+   "what": "Connected economic zones, physical and online, run on blockchain. Zones in Zanzibar and Honduras.",
+   "prof": "A",
+   "loc": "To confirm",
+   "school": "",
+   "cs": "Founded 2024",
+   "raised": "Unknown",
+   "fund": "unknown",
+   "read": "good",
+   "why": "Unusual, global idea built outside Brazil. Where he is based still to confirm.",
+   "by": [
+    "Ellie Park"
+   ],
+   "li": [
+    [
+     "Hugo",
+     "https://www.linkedin.com/in/hugo-mathecowitsch-9447a3213/"
+    ]
+   ]
+  },
+  {
+   "id": "f13",
+   "stage": "sourced",
+   "call": null,
+   "n": "Arthur Bucker",
+   "co": "No company yet",
+   "what": "First author of GRAPPA, research on robots adapting to new situations.",
+   "prof": "A",
+   "loc": "Pittsburgh",
+   "school": "Carnegie Mellon (Robotics PhD)",
+   "cs": "No company yet",
+   "raised": "",
+   "fund": "na",
+   "read": "keep",
+   "why": "Built autonomous drone and underwater systems. A connection to make before any startup exists.",
+   "by": [
+    "Denis Neto"
+   ],
+   "li": []
+  },
+  {
+   "id": "f14",
+   "stage": "sourced",
+   "call": null,
+   "n": "Victor Dubeux",
+   "co": "Extend (growth team)",
+   "what": "Works at Extend, which turns complex documents into usable data with AI.",
+   "prof": "A",
+   "loc": "US",
+   "school": "University of Pennsylvania (M&T)",
+   "cs": "No company yet",
+   "raised": "",
+   "fund": "na",
+   "read": "keep",
+   "why": "Came up with a tool and built it in 72 hours. A possible future founder.",
+   "by": [
+    "Denis Neto"
+   ],
+   "li": []
+  },
+  {
+   "id": "f15",
+   "stage": "sourced",
+   "call": null,
+   "n": "Rodrigo Porto",
+   "co": "Vigil Labs (technical staff)",
+   "what": "Member of technical staff at Vigil Labs while still an undergraduate.",
+   "prof": "A",
+   "loc": "Princeton",
+   "school": "Princeton, class of 2027",
+   "cs": "No company yet",
+   "raised": "",
+   "fund": "na",
+   "read": "keep",
+   "why": "Strong technical depth at a top school. Not a founder yet.",
+   "by": [
+    "Fred Camargo"
+   ],
+   "li": [
+    [
+     "Rodrigo",
+     "https://www.linkedin.com/in/rodrigo-porto-760150169/"
+    ]
+   ]
+  },
+  {
+   "id": "f16",
+   "stage": "sourced",
+   "call": null,
+   "n": "Bruno Koba & Daniel Tulha Hochstetler",
+   "co": "Astor",
+   "what": "SEC-registered AI investment advisor for US retail investors.",
+   "prof": "A",
+   "loc": "San Francisco",
+   "school": "Purdue (Daniel)",
+   "cs": "Seed",
+   "raised": "US$ 5M seed led by Monashees (Apr 2026)",
+   "fund": "closed",
+   "read": "later",
+   "why": "Strong team, ex Nubank, Monashees, Stripe and Robinhood, but already well known to Brazilian funds.",
+   "by": [
+    "Rafael Rocha",
+    "Ian Ngo",
+    "Denis Neto"
+   ],
+   "li": [
+    [
+     "Bruno",
+     "https://www.linkedin.com/in/bruno-koba/"
+    ],
+    [
+     "Daniel",
+     "https://www.linkedin.com/in/daniel-hochstetler/"
+    ]
+   ]
+  },
+  {
+   "id": "f17",
+   "stage": "sourced",
+   "call": null,
+   "n": "Alfonso de los Rios & Antonio Nacoud",
+   "co": "Handle",
+   "what": "AI agents that automate business work like quotes and reconciliation.",
+   "prof": "A",
+   "loc": "US",
+   "school": "",
+   "cs": "Seed",
+   "raised": "US$ 6M seed led by a16z (Mar 2026)",
+   "fund": "closed",
+   "read": "later",
+   "why": "Past the stage we are looking for.",
+   "by": [
+    "Ian Ngo"
+   ],
+   "li": [
+    [
+     "Alfonso",
+     "https://www.linkedin.com/in/alfonsodelosrios/"
+    ],
+    [
+     "Antonio",
+     "https://www.linkedin.com/in/antonionacoud/"
+    ]
+   ]
+  },
+  {
+   "id": "f18",
+   "stage": "sourced",
+   "call": null,
+   "n": "Mike Allan & Isha Bhatnagar",
+   "co": "Beltic",
+   "what": "Checks the identity of AI agents that make payments, to stop fraud.",
+   "prof": "A",
+   "loc": "US",
+   "school": "",
+   "cs": "Seed",
+   "raised": "US$ 7.3M seed led by Norwest (Sep 2026)",
+   "fund": "closed",
+   "read": "later",
+   "why": "Past the stage we are looking for. LatAm link to confirm.",
+   "by": [
+    "Ian Ngo"
+   ],
+   "li": [
+    [
+     "Mike",
+     "https://www.linkedin.com/in/mikeallanpe/"
+    ],
+    [
+     "Isha",
+     "https://www.linkedin.com/in/isha-bhatnagar-profile/"
+    ]
+   ]
+  },
+  {
+   "id": "f19",
+   "stage": "sourced",
+   "call": null,
+   "n": "Ricardo Barros",
+   "co": "Tess AI",
+   "what": "Platform that runs AI agents for companies, priced per task.",
+   "prof": "A",
+   "loc": "",
+   "school": "",
+   "cs": "Seed",
+   "raised": "US$ 5M seed led by Hi Ventures (Mar 2026)",
+   "fund": "closed",
+   "read": "later",
+   "why": "Past the stage we are looking for.",
+   "by": [
+    "Ian Ngo"
+   ],
+   "li": [
+    [
+     "Ricardo",
+     "https://www.linkedin.com/in/rica-barros/"
+    ]
+   ]
+  },
+  {
+   "id": "f20",
+   "stage": "sourced",
+   "call": null,
+   "n": "Natalia Salcedo Franco",
+   "co": "PITZ",
+   "what": "AI operating system for independent auto-repair shops.",
+   "prof": "B",
+   "loc": "Mexico · Brazil",
+   "school": "",
+   "cs": "Pre-seed",
+   "raised": "US$ 2.1M pre-seed (Marathon, Latitud, 500 LatAm)",
+   "fund": "closed",
+   "read": "later",
+   "why": "Experienced founder, co-founded JOKR. Building in LatAm and already well backed.",
+   "by": [
+    "Rafael Rocha"
+   ],
+   "li": [
+    [
+     "Natalia",
+     "https://www.linkedin.com/in/nataliasalcedo/"
+    ]
+   ]
+  },
+  {
+   "id": "f21",
+   "stage": "sourced",
+   "call": null,
+   "n": "Lucca Freire",
+   "co": "UnblockPay",
+   "what": "International payments for businesses, moving between currencies and dollar stablecoins.",
+   "prof": "A",
+   "loc": "",
+   "school": "",
+   "cs": "Seed",
+   "raised": "US$ 4.5M seed led by Prelude",
+   "fund": "closed",
+   "read": "later",
+   "why": "Right theme, but the seed is already closed.",
+   "by": [
+    "Rafael Prado"
+   ],
+   "li": [
+    [
+     "Lucca",
+     "https://br.linkedin.com/in/lucca-freire-b39758110"
+    ]
+   ]
+  },
+  {
+   "id": "f22",
+   "stage": "sourced",
+   "call": null,
+   "n": "Ed Escobar & Juan Martín Pagella",
+   "co": "Kleva",
+   "what": "Voice AI collections for lenders across six LatAm countries.",
+   "prof": "B",
+   "loc": "Mexico City",
+   "school": "",
+   "cs": "Seed",
+   "raised": "US$ 1.55M (Apr 2026), led by Wollef",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Repeat founders building in LatAm for LatAm, with Mercado Pago and Xepelin as clients.",
+   "by": [
+    "Mariana Castedo"
+   ],
+   "li": [
+    [
+     "Juan Martín",
+     "https://www.linkedin.com/in/jmpagella/"
+    ]
+   ]
+  },
+  {
+   "id": "f23",
+   "stage": "sourced",
+   "call": null,
+   "n": "Facundo Corsi",
+   "co": "UIN",
+   "what": "AI engine that helps banks and wallets reactivate dormant users.",
+   "prof": "—",
+   "loc": "Buenos Aires",
+   "school": "",
+   "cs": "Seed",
+   "raised": "US$ 2M seed (Oct 2026), led by EWA Capital",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Second-time founder, regional rather than profile A or B, round just closed.",
+   "by": [
+    "Mariana Castedo"
+   ],
+   "li": [
+    [
+     "Facundo",
+     "https://ar.linkedin.com/in/facucorsi"
+    ]
+   ]
+  },
+  {
+   "id": "f24",
+   "stage": "sourced",
+   "call": null,
+   "n": "Daniel Magalhães",
+   "co": "Vitrify",
+   "what": "Brings together data on Brazilian private-credit investments.",
+   "prof": "—",
+   "loc": "Brazil",
+   "school": "",
+   "cs": "Pre-seed",
+   "raised": "R$ 5M pre-seed",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Built in Brazil for the Brazilian market.",
+   "by": [
+    "Rafael Prado"
+   ],
+   "li": [
+    [
+     "Daniel",
+     "https://br.linkedin.com/in/dmcmagalhaes"
+    ]
+   ]
+  },
+  {
+   "id": "f25",
+   "stage": "sourced",
+   "call": null,
+   "n": "Juliana Freitas",
+   "co": "Bull",
+   "what": "Helps companies launch credit products, starting with payroll-deducted loans.",
+   "prof": "—",
+   "loc": "Brazil",
+   "school": "",
+   "cs": "Seed",
+   "raised": "R$ 10M pre-seed led by Canary, then R$ 20M seed",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Built in Brazil for the Brazilian market, already well funded.",
+   "by": [
+    "Rafael Prado"
+   ],
+   "li": [
+    [
+     "Juliana",
+     "https://br.linkedin.com/in/juliana-matos-freitas"
+    ]
+   ]
+  },
+  {
+   "id": "f26",
+   "stage": "sourced",
+   "call": null,
+   "n": "Rafael Guerra",
+   "co": "Sinatra AI",
+   "what": "Monitors retail orders, payments and inventory to catch failures before they cost revenue.",
+   "prof": "—",
+   "loc": "Brazil",
+   "school": "",
+   "cs": "Seed",
+   "raised": "R$ 10M seed led by BluStone",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Built in Brazil for the Brazilian market by a 15-year retail veteran.",
+   "by": [
+    "Rafael Prado"
+   ],
+   "li": [
+    [
+     "Rafael",
+     "https://br.linkedin.com/in/rafaelcguerra"
+    ]
+   ]
+  },
+  {
+   "id": "f27",
+   "stage": "sourced",
+   "call": null,
+   "n": "Miguel Monjardim Andrade",
+   "co": "Ailum",
+   "what": "AI that answers patients and handles scheduling for medical and dental clinics.",
+   "prof": "—",
+   "loc": "Espírito Santo, Brazil",
+   "school": "",
+   "cs": "Early",
+   "raised": "Angel money",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Young and early, but building in Brazil for Brazilian clinics.",
+   "by": [
+    "Ellie Park"
+   ],
+   "li": [
+    [
+     "Miguel",
+     "https://www.linkedin.com/in/miguel-andrade-m-/"
+    ]
+   ]
+  },
+  {
+   "id": "f28",
+   "stage": "sourced",
+   "call": null,
+   "n": "Allan Birman",
+   "co": "Venda.ai",
+   "what": "AI sales assistants for small and mid-sized stores.",
+   "prof": "—",
+   "loc": "Brazil (to confirm)",
+   "school": "",
+   "cs": "Early",
+   "raised": "Angels, no fund yet",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Early, with real customers, but appears to be a Brazilian product for Brazilian stores.",
+   "by": [
+    "Ellie Park"
+   ],
+   "li": [
+    [
+     "Allan",
+     "https://www.linkedin.com/in/allan-birman-b15715141/"
+    ]
+   ]
+  },
+  {
+   "id": "f29",
+   "stage": "sourced",
+   "call": null,
+   "n": "Diogo Duarte",
+   "co": "Plain",
+   "what": "AI tools to plan and manage investments, taxes and inheritance.",
+   "prof": "—",
+   "loc": "Brazil (to confirm)",
+   "school": "",
+   "cs": "Early",
+   "raised": "Angels (Urca Angels and others)",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Fintech with angel backing. Market appears to be Brazil, to confirm.",
+   "by": [
+    "Ellie Park"
+   ],
+   "li": [
+    [
+     "Diogo",
+     "https://www.linkedin.com/in/diogo-duarte-msc/"
+    ]
+   ]
+  },
+  {
+   "id": "f30",
+   "stage": "sourced",
+   "call": null,
+   "n": "Chris Cornehl",
+   "co": "MeetRox",
+   "what": "AI tools for sales teams: CRM filling after calls and pitch quality checks.",
+   "prof": "—",
+   "loc": "Curitiba, Brazil",
+   "school": "",
+   "cs": "Early",
+   "raised": "Angel investors",
+   "fund": "closed",
+   "read": "outside",
+   "why": "Based in Curitiba, selling to sales teams in Brazil.",
+   "by": [
+    "Ellie Park"
+   ],
+   "li": [
+    [
+     "Chris",
+     "https://www.linkedin.com/in/chriscornehl/"
+    ]
+   ]
+  }
+ ]
+}

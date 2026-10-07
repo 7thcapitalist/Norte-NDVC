@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Norte Founder Network</title>
+<style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
+<style>
+/* Layout: a small multi-page site. Black Norte masthead with pill navigation; each page opens with its own title band;
+   the seven-step journey (numbered circles on a line) is the recurring device that explains stages everywhere. */
+:root{
+  --bg:#F4F3EE; --surface:#FFFFFF; --panel:#F2ECD6; --ink:#141414; --ink-2:#45423B; --muted:#757164;
+  --line:#E2DDCD; --yellow:#F9CF1E; --gold:#D99A1E; --gold-ink:#7A5200; --on-yellow:#141414; --soft:#FFF6CC;
+  --mast:#000000; --mast-2:#1C1B18; --mast-ink:#F4F3EE; --mast-muted:#B9B5A8; --todo:#D9D4C3;
+  --shadow:0 1px 2px rgba(20,20,20,.05),0 8px 24px rgba(20,20,20,.06);
+  --font:'Archivo',Arial,Helvetica,sans-serif; --r:20px; --r-sm:12px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#121210; --surface:#1D1C18; --panel:#27241C; --ink:#F4F3EE; --ink-2:#D2CEC2; --muted:#9C978A;
+  --line:#34312A; --yellow:#F9CF1E; --gold:#D99A1E; --gold-ink:#F2C230; --on-yellow:#141414; --soft:#3A3113;
+  --mast:#000000; --mast-2:#1C1B18; --mast-ink:#F4F3EE; --mast-muted:#A39F93; --todo:#45423A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#121210; --surface:#1D1C18; --panel:#27241C; --ink:#F4F3EE; --ink-2:#D2CEC2; --muted:#9C978A;
+  --line:#34312A; --yellow:#F9CF1E; --gold:#D99A1E; --gold-ink:#F2C230; --on-yellow:#141414; --soft:#3A3113;
+  --mast:#000000; --mast-2:#1C1B18; --mast-ink:#F4F3EE; --mast-muted:#A39F93; --todo:#45423A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35); color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.5}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1140px;margin-inline:auto;padding-inline:20px}
+
+/* masthead + nav */
+.mast{background:var(--mast);color:var(--mast-ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:10}
+.mast .wrap{display:flex;align-items:center;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;background:none;border:0;cursor:pointer;padding:0;color:var(--mast-ink)}
+.brand svg{width:38px;height:33px}
+.brand b{font-weight:800;font-size:19px;letter-spacing:-.01em}
+.brand span{color:var(--mast-muted);font-size:14px;font-weight:500}
+.nav{margin-left:auto;display:flex;gap:6px;overflow-x:auto;max-width:100%;padding-block:2px}
+.nav button{background:none;border:0;border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px;color:var(--mast-muted);cursor:pointer;white-space:nowrap}
+.nav button:hover{color:var(--mast-ink)}
+.nav button[aria-current="page"]{background:var(--yellow);color:var(--on-yellow)}
+
+/* page heads */
+.head{background:var(--mast);color:var(--mast-ink);border-radius:0 0 32px 32px}
+.head .wrap{padding-block:34px 44px;display:flex;flex-direction:column;gap:10px}
+.head h1{font-weight:900;font-size:clamp(30px,5vw,50px);line-height:1.04;letter-spacing:-.02em;text-wrap:balance;max-width:20ch}
+.head p{color:var(--mast-muted);font-size:18px;max-width:62ch}
+.kicker{color:var(--yellow);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.1em}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;align-items:center;padding-block:40px 0}
+.hero h1{max-width:15ch;font-size:clamp(34px,5.6vw,60px)}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero .art{align-self:end;display:flex;justify-content:center;gap:8px;min-width:0}
+.hero .art img{height:300px;width:auto;border-radius:0;display:block}
+.hero .copy{display:flex;flex-direction:column;gap:16px;padding-bottom:44px;min-width:0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+@media (max-width:820px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.hero .art img{height:190px}.hero .copy{padding-bottom:8px}}
+.btn{background:var(--yellow);color:var(--on-yellow);border:0;border-radius:999px;padding:13px 22px;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.line{background:none;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.head .btn.line,.bar .btn.line{color:var(--mast-ink);box-shadow:inset 0 0 0 2px var(--mast-muted)}
+.btn.sm{padding:9px 16px;font-size:15px}
+
+main{display:flex;flex-direction:column;gap:48px;padding-block:40px 140px}
+.sec{display:flex;flex-direction:column;gap:18px}
+.sec > header{display:flex;flex-direction:column;gap:4px}
+.sec h2{font-weight:800;font-size:clamp(22px,3vw,28px);letter-spacing:-.01em;text-wrap:balance}
+.sec > header p{color:var(--muted)}
+.card{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:24px}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:-34px}
+.num{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:18px 20px;display:flex;flex-direction:column;gap:2px}
+.num b{font-weight:900;font-size:40px;line-height:1;font-variant-numeric:tabular-nums}
+.num span{color:var(--ink-2);font-size:15px;font-weight:500}
+@media (max-width:700px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* journey stepper */
+.journey{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));position:relative}
+.step{background:none;border:0;padding:0 6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;position:relative;min-width:0}
+.step::before{content:"";position:absolute;top:27px;left:-50%;width:100%;height:4px;background:var(--todo)}
+.step:first-child::before{display:none}
+.step.done::before{background:var(--gold)}
+.dot{width:58px;height:58px;border-radius:50%;background:var(--surface);box-shadow:inset 0 0 0 4px var(--todo);display:grid;place-items:center;font-weight:900;font-size:22px;position:relative;z-index:1;font-variant-numeric:tabular-nums;color:var(--muted)}
+.step.has .dot{background:var(--yellow);box-shadow:inset 0 0 0 4px var(--gold);color:var(--on-yellow)}
+.step.here .dot{background:var(--ink);box-shadow:0 0 0 6px var(--soft);color:var(--bg)}
+.step.past .dot{background:var(--gold);box-shadow:none;color:var(--on-yellow)}
+.step strong{font-size:15px;font-weight:700;line-height:1.2}
+.step small{font-size:13px;color:var(--muted);line-height:1.3}
+.step .ord{font-size:12px;font-weight:700;color:var(--gold-ink);text-transform:uppercase;letter-spacing:.08em}
+@media (max-width:820px){
+  .journey{grid-template-columns:minmax(0,1fr);gap:0}
+  .step{flex-direction:row;align-items:center;text-align:left;gap:14px;padding:10px 0}
+  .step::before{top:-50%;left:27px;width:4px;height:100%}
+  .step .txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+}
+@media (min-width:821px){.step .txt{display:contents}}
+
+/* people */
+.av{width:46px;height:46px;border-radius:50%;background:var(--panel);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
+.av.top{background:var(--yellow);color:var(--on-yellow)}
+.av.good{background:var(--gold);color:var(--on-yellow)}
+.av.keep{background:var(--ink);color:var(--bg)}
+.av.lg{width:84px;height:84px;font-size:30px}
+.picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.pick{background:var(--surface);border:0;border-radius:var(--r);box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;gap:12px;text-align:left;cursor:pointer;min-width:0}
+.pick:hover,.prow:hover,.person:hover{transform:translateY(-2px)}
+.pick,.prow,.person{transition:transform .15s ease}
+@media (prefers-reduced-motion:reduce){.pick,.prow,.person{transition:none}.pick:hover,.prow:hover,.person:hover{transform:none}}
+.who{display:flex;gap:12px;align-items:center;min-width:0}
+.who div{min-width:0}
+.who b{display:block;font-weight:800;font-size:18px;line-height:1.2;overflow-wrap:anywhere}
+.who span{color:var(--gold-ink);font-weight:600;font-size:14px}
+.pick p{color:var(--ink-2);font-size:16px}
+.pick footer{margin-top:auto;display:flex;flex-direction:column;gap:8px}
+.by{color:var(--muted);font-size:14px}
+
+/* mini tracker */
+.mini{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mini .dots{display:flex;gap:4px}
+.mini i{width:18px;height:8px;border-radius:999px;background:var(--todo)}
+.mini i.on{background:var(--gold)}
+.mini i.now{background:var(--ink)}
+.mini span{font-size:14px;font-weight:700}
+.mini small{font-size:13px;color:var(--muted)}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;border-radius:999px;font-size:13px;font-weight:700;padding:5px 12px;background:var(--panel);color:var(--ink-2);white-space:nowrap}
+.pill.top{background:var(--yellow);color:var(--on-yellow)}
+.pill.good{background:var(--soft);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.pill.keep{background:var(--ink);color:var(--bg)}
+.pill.raise{background:var(--soft);color:var(--ink)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:16px;padding-bottom:22px;position:relative}
+.tl li::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px var(--soft);margin-top:5px;position:relative;z-index:1}
+.tl li::after{content:"";position:absolute;left:6px;top:14px;bottom:-6px;width:2px;background:var(--line)}
+.tl li:last-child::after{display:none}
+.tl time{font-size:13px;font-weight:700;color:var(--gold-ink);text-transform:uppercase;letter-spacing:.06em}
+.tl b{display:block;font-size:18px;font-weight:800}
+.tl p{color:var(--ink-2)}
+.split{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:860px){.split{grid-template-columns:minmax(0,1fr)}}
+.note{background:var(--panel);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px}
+.note h3{font-size:19px;font-weight:800}
+.note p{color:var(--ink-2)}
+
+/* pipeline page */
+.lane{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:24px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;scroll-margin-top:90px}
+.lane.none{background:none;box-shadow:inset 0 0 0 2px var(--line)}
+.lane .lab{display:flex;flex-direction:column;gap:8px}
+.lane .lab .row{display:flex;align-items:center;gap:12px}
+.lane .lab strong{font-size:20px;font-weight:800;line-height:1.15}
+.lane .lab p{color:var(--muted);font-size:15px}
+.lane .dot{width:52px;height:52px;font-size:20px;flex:none}
+.lane.any .dot{background:var(--yellow);box-shadow:inset 0 0 0 4px var(--gold);color:var(--on-yellow)}
+.people{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+.person{background:var(--bg);border:0;border-radius:999px;padding:6px 16px 6px 6px;display:flex;align-items:center;gap:10px;cursor:pointer;max-width:100%;text-align:left}
+.person .av{width:36px;height:36px;font-size:13px}
+.person b{font-size:15px;font-weight:700;display:block;line-height:1.2;overflow-wrap:anywhere}
+.person small{font-size:13px;color:var(--muted)}
+.empty{color:var(--muted);align-self:center}
+@media (max-width:700px){.lane{grid-template-columns:minmax(0,1fr)}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--ink-2);font-size:14px}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend i{width:14px;height:14px;border-radius:50%;display:inline-block}
+
+/* founders page */
+.filters{display:flex;flex-wrap:wrap;gap:10px}
+.filters input,.filters select{background:var(--surface);border:0;box-shadow:inset 0 0 0 1.5px var(--line);border-radius:999px;padding:11px 16px;min-width:0;font-size:15px;max-width:100%}
+.filters input{flex:1 1 240px}
+.list{display:flex;flex-direction:column;gap:10px}
+.prow{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 18px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1.3fr) minmax(0,1.2fr) 44px;gap:16px;align-items:center;cursor:pointer}
+.prow .tags{display:flex;flex-wrap:wrap;gap:6px}
+.star{background:var(--bg);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;color:var(--muted);flex:none}
+.star[aria-pressed="true"]{background:var(--yellow);color:var(--on-yellow)}
+@media (max-width:820px){.prow{grid-template-columns:minmax(0,1fr) 44px}.prow .tags,.prow .mini{grid-column:1 / -1}.prow .star{grid-row:1;grid-column:2}}
+
+/* profile page */
+.back{background:none;border:0;color:var(--mast-muted);cursor:pointer;padding:0;font-weight:600;font-size:15px;align-self:flex-start}
+.phead{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.phead h1{max-width:none;font-size:clamp(28px,4.4vw,44px)}
+.facts{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px 20px}
+.facts dt{color:var(--muted);font-size:14px;font-weight:600;padding-top:2px}
+.facts dd{margin:0;overflow-wrap:anywhere}
+@media (max-width:560px){.facts{grid-template-columns:minmax(0,1fr);gap:2px}.facts dd{margin-bottom:12px}}
+.read{background:var(--soft);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px}
+.read h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold-ink)}
+.read p{font-size:19px;font-weight:500;line-height:1.4}
+.msg{background:var(--panel);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:12px}
+.msg textarea{width:100%;min-height:96px;background:var(--surface);border:0;border-radius:var(--r-sm);padding:12px;font-size:15px;resize:vertical}
+.msg p{font-size:15px;color:var(--ink-2)}
+.acts{display:flex;flex-wrap:wrap;gap:10px}
+
+/* calls + how */
+.blank{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.blank img{width:150px;height:auto;border-radius:16px;flex:none}
+.blank div{flex:1 1 300px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.blank h3{font-size:22px;font-weight:800}
+.blank ul{margin:0;padding-left:20px;color:var(--ink-2)}
+.call{display:flex;flex-direction:column;gap:12px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:820px){.grid2,.grid3{grid-template-columns:minmax(0,1fr)}}
+.prof{border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:8px}
+.prof.a{background:var(--mast);color:var(--mast-ink)}
+.prof.b{background:var(--yellow);color:var(--on-yellow)}
+.prof small{font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:13px}
+.prof.a small{color:var(--yellow)}
+.prof h3{font-size:24px;font-weight:800;line-height:1.2}
+.defs{display:flex;flex-direction:column}
+.defs div{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.defs div:first-child{border-top:0}
+.defs .dot{width:44px;height:44px;font-size:17px;background:var(--yellow);box-shadow:none;color:var(--on-yellow)}
+.defs b{display:block;font-weight:800}
+.defs span{color:var(--ink-2)}
+.team{display:flex;flex-wrap:wrap;gap:10px}
+.team span{background:var(--surface);border-radius:999px;padding:8px 16px 8px 8px;display:flex;align-items:center;gap:10px;font-weight:600;box-shadow:var(--shadow)}
+.team .av{width:32px;height:32px;font-size:12px}
+
+/* shortlist bar */
+.bar{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9;display:flex;justify-content:center;pointer-events:none}
+.bar > div{pointer-events:auto;background:var(--mast);color:var(--mast-ink);border-radius:999px;padding:10px 12px 10px 24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;box-shadow:0 12px 40px rgba(0,0,0,.35);max-width:100%}
+.bar b{font-weight:700}
+@media (max-width:560px){.bar > div{border-radius:24px;padding:14px}}
+
+/* v3: editing, ratings, team */
+.rate{color:var(--gold);font-size:15px;letter-spacing:1px;white-space:nowrap;align-self:center}
+.rate i{font-style:normal;color:var(--todo)}
+.rate.big{font-size:20px}
+.head .rate i{color:#4A473F}
+.pill.drop{background:var(--ink);color:var(--bg);opacity:.75}
+.dropnote{background:var(--panel);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:6px;box-shadow:inset 6px 0 0 var(--ink)}
+.dropnote b{font-size:19px}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}
+.form .wide{grid-column:1 / -1}
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld > span{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.fld input,.fld select,.fld textarea,#imp{background:var(--bg);border:0;box-shadow:inset 0 0 0 1.5px var(--line);border-radius:var(--r-sm);padding:11px 14px;width:100%;font-size:16px;resize:vertical}
+@media (max-width:640px){.form{grid-template-columns:minmax(0,1fr)}}
+.setrate{display:flex;gap:4px}
+.setrate button{background:var(--bg);border:0;width:42px;height:42px;border-radius:50%;font-size:20px;color:var(--todo);cursor:pointer}
+.setrate button.on{background:var(--yellow);color:var(--on-yellow)}
+.btn.dark{background:var(--ink);color:var(--bg)}
+.edit{background:var(--panel);border-radius:var(--r);padding:24px}
+.members{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.member{display:flex;flex-direction:column;gap:14px;padding:22px}
+.mlist{display:flex;flex-direction:column}
+.mrow{background:none;border:0;border-top:1px solid var(--line);padding:10px 0;display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;text-align:left}
+.mrow b{display:block;font-size:15px;font-weight:700;overflow-wrap:anywhere}
+.mrow small{color:var(--muted);font-size:13px}
+.mrow span:first-child{min-width:0}
+.toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(84px + env(safe-area-inset-top,0px));z-index:20;background:var(--ink);color:var(--bg);border-radius:20px;padding:12px 18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;max-width:min(520px,calc(100vw - 32px));box-shadow:0 12px 40px rgba(0,0,0,.35);font-weight:600}
+.dump{width:100%;min-height:120px;background:var(--surface);color:var(--ink);border:0;border-radius:12px;padding:10px;font-size:13px}
+</style>
+</head>
+<body>
+
+<header class="mast"><div class="wrap">
+  <button class="brand" id="brand" aria-label="Home">
+    <svg viewBox="0 0 140 120" aria-hidden="true"><polyline points="14,110 14,52 58,92 118,24" fill="none" stroke="#F9CF1E" stroke-width="13"/><polygon points="96,18 130,8 124,44" fill="#F9CF1E"/></svg>
+    <b>Founder Network</b><span>NDVC × Norte</span>
+  </button>
+  <div class="nav" id="nav" role="navigation" aria-label="Pages"></div>
+</div></header>
+
+<div id="page"></div>
+
+<div class="bar" id="bar" hidden><div>
+  <b id="bar-n"></b>
+  <button class="btn sm" id="bar-copy">Copy list for João</button>
+  <button class="btn sm line" id="bar-clear">Clear</button>
+</div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+let UPDATED = "Oct 7, 2026";
+const STAGES = [
+  ["sourced","Sourced","On the list, nothing sent yet"],
+  ["intro","Finding intro","Looking for a warm intro"],
+  ["reached","Reached out","Message sent, waiting"],
+  ["replied","Replied","Founder answered, scheduling"],
+  ["talked","Talked","Call done, notes logged"],
+  ["flagged","Flagged by Norte","Norte wants to meet them"],
+  ["handed","Handed off","Intro to Norte made"]];
+const READS = {top:"Top pick",good:"Good fit",keep:"Keep close",later:"Later stage",outside:"Outside profile"};
+const FUNDS = {pre:"No round yet",raising:"Raising now",closed:"Round closed",na:"Not a founder yet",unknown:"Unknown"};
+let LOG = [
+  ["Oct 7","Outreach started","The team picked the first 10 founders to reach and is finding a warm intro for each. Five new names per member are due this week."],
+  ["Oct 6","35 names sourced","Seven members submitted five founders each: 31 unique people and teams. We tightened the profile toward earlier founders based in the US."],
+  ["Sep 29","Team kickoff","Introduction to Norte and the pure-follower model. Every member wrote up their read of Norte before the meeting."],
+  ["Sep 22","Kickoff with Norte","João Vitor Carvalho and João Camara set the profile, this page as the main output, and monthly meetings."]];
+const L = "https://www.linkedin.com/in/";
+let F = [
+ {n:"Felipe Makoto Shimamura Silva",co:"Stealth startup",what:"Stealth since July 2026. Role and sector still to confirm.",prof:"A",loc:"MIT · São Paulo",school:"MIT, class of 2029",cs:"Stealth",raised:"None known",fund:"pre",read:"top",why:"International Mathematical Olympiad gold medalist, at MIT, already building. Exactly the early profile.",by:["Fred Camargo"],li:[["Felipe",L+"felipe-makoto-shimamura-silva-870210359/"]]},
+ {n:"Guilherme Zart Hoher",co:"Stealth fintech",what:"Building in fintech, in stealth since January 2026.",prof:"A",loc:"From Curitiba · Berkeley",school:"UC Berkeley (BS)",cs:"Stealth",raised:"None known",fund:"pre",read:"top",why:"Endeavor, Atlantico and BRASA background. Operator-style founder in Norte's core sector, just out of college.",by:["Fred Camargo"],li:[["Guilherme",L+"guilhermehoher/"]]},
+ {n:"Lucas Mantovani",co:"Velvet",what:"Datasets and models that help AI interact through conversation, audio and video.",prof:"A",loc:"San Francisco",school:"University of Chicago (CS, Cognitive Science)",cs:"Early",raised:"Unknown",fund:"unknown",read:"top",why:"Young Brazilian founder and CEO building for the world. Proposed and shipped an AI feature as a Meta intern.",by:["Denis Neto"],li:[]},
+ {n:"Ignacio Berardi",co:"Rexi",what:"AI reconciliation for banks, fintechs and payment companies: matches transactions across systems and investigates mismatches.",prof:"A",loc:"New York · Buenos Aires",school:"Harvard MBA",cs:"Pre-seed",raised:"US$ 1.2M pre-seed (Pear, NFX, Underscore, Flybridge). Seed planned H2 2026",fund:"raising",read:"top",why:"Built the reconciliation process at Comun, then started a company on that exact problem. Sourced independently by three members.",by:["Rafael Rocha","Denis Neto","Mariana Castedo"],li:[["Ignacio",L+"ignacioberardi/"]]},
+ {n:"Rodrigo Mosqueira & Oscar Aguilar",co:"Bizmark",what:"AI that runs purchasing and production planning for factories.",prof:"A",loc:"US",school:"",cs:"Post-YC (Summer 2026)",raised:"YC only, no round announced",fund:"pre",read:"top",why:"Just finished YC with no round yet. The right moment to meet.",by:["Ian Ngo"],li:[["Rodrigo",L+"moag/"],["Oscar",L+"oscar-t-aguilar/"]]},
+ {n:"Luis Olave",co:"Altur",what:"Voice and text AI agents that negotiate and collect debt for lenders.",prof:"A",loc:"SF Bay Area · Mexico City",school:"",cs:"Post-YC (Summer 2025)",raised:"About US$ 225K (Platanus, YC)",fund:"pre",read:"top",why:"Ran debt collection in Mexico for two years before building AI for it. Reports about US$ 1M ARR in 8 months.",by:["Mariana Castedo"],li:[["Luis",L+"luis-olave/"]]},
+ {n:"Guilherme Ávila",co:"Stealth",what:"\"Building & Investing\" at a stealth company since November 2025.",prof:"A",loc:"Greater Boston",school:"Harvard (visiting student), Estudar Fellow",cs:"Stealth",raised:"None known",fund:"pre",read:"good",why:"Early and in the US. Sector and founder role still to confirm.",by:["Fred Camargo"],li:[["Guilherme",L+"guilherme-ferreira-lima-de-avila/"]]},
+ {n:"Bruno Azambuja",co:"Stealth",what:"Stealth role since February 2026.",prof:"A",loc:"Greater Boston",school:"Harvard (visiting student)",cs:"Stealth",raised:"None known",fund:"pre",read:"good",why:"Same early profile. Less evidence so far on what he is building.",by:["Fred Camargo"],li:[["Bruno",L+"bruno-azambuja-carvalho/"]]},
+ {n:"Marcelo Gutiérrez",co:"LlamitAI",what:"AI copilots for bank compliance and credit operations.",prof:"A",loc:"London · La Paz",school:"UCL (MSc Data Science)",cs:"Early",raised:"Undisclosed",fund:"closed",read:"good",why:"Bolivian founder building globally, used by about 30% of Bolivia's financial institutions, US pilots starting.",by:["Mariana Castedo"],li:[["Marcelo",L+"marcelogutierrezmallea/"]]},
+ {n:"Lucas Valeggiani Fuoco",co:"Fonder",what:"An AI treasurer for small and mid-sized companies: reconciliation, cash flow, payables and receivables.",prof:"A",loc:"Argentina",school:"",cs:"Pre-seed",raised:"US$ 500K round open (Latitud Ventures, angels)",fund:"raising",read:"good",why:"Lived the problem: managed treasury at his family's business. Check how much is built for outside Argentina.",by:["Rafael Rocha"],li:[["Lucas",L+"lucas-valeggiani-fuoco-1b48407b/"]]},
+ {n:"Nicolas Casaux",co:"Bianca AI",what:"Commercial intelligence for consumer-goods companies, turning sales data into actions.",prof:"A",loc:"Argentina · US, Mexico, Peru",school:"ITBA",cs:"Pre-seed",raised:"US$ 500K pre-seed (Magma, MatterScale)",fund:"closed",read:"good",why:"Already operating in the US. Experienced operator from the Coca-Cola ecosystem.",by:["Rafael Rocha"],li:[["Nicolas",L+"nicolas-casaux/"]]},
+ {n:"Rafael Pereira",co:"Zeom",what:"International banking: global account, investments and cross-border payments.",prof:"A",loc:"London, launching in Brazil",school:"",cs:"Pre-seed",raised:"About US$ 3M pre-seed (Fabric Ventures), to verify",fund:"closed",read:"good",why:"Brazilians building abroad with an international product, though the first market is Brazil.",by:["Rafael Prado"],li:[["Rafael","https://br.linkedin.com/in/rafaelsantarita"]]},
+ {n:"Hugo Mathecowitsch",co:"Tools for the Commons",what:"Connected economic zones, physical and online, run on blockchain. Zones in Zanzibar and Honduras.",prof:"A",loc:"To confirm",school:"",cs:"Founded 2024",raised:"Unknown",fund:"unknown",read:"good",why:"Unusual, global idea built outside Brazil. Where he is based still to confirm.",by:["Ellie Park"],li:[["Hugo",L+"hugo-mathecowitsch-9447a3213/"]]},
+ {n:"Arthur Bucker",co:"No company yet",what:"First author of GRAPPA, research on robots adapting to new situations.",prof:"A",loc:"Pittsburgh",school:"Carnegie Mellon (Robotics PhD)",cs:"No company yet",raised:"",fund:"na",read:"keep",why:"Built autonomous drone and underwater systems. A connection to make before any startup exists.",by:["Denis Neto"],li:[]},
+ {n:"Victor Dubeux",co:"Extend (growth team)",what:"Works at Extend, which turns complex documents into usable data with AI.",prof:"A",loc:"US",school:"University of Pennsylvania (M&T)",cs:"No company yet",raised:"",fund:"na",read:"keep",why:"Came up with a tool and built it in 72 hours. A possible future founder.",by:["Denis Neto"],li:[]},
+ {n:"Rodrigo Porto",co:"Vigil Labs (technical staff)",what:"Member of technical staff at Vigil Labs while still an undergraduate.",prof:"A",loc:"Princeton",school:"Princeton, class of 2027",cs:"No company yet",raised:"",fund:"na",read:"keep",why:"Strong technical depth at a top school. Not a founder yet.",by:["Fred Camargo"],li:[["Rodrigo",L+"rodrigo-porto-760150169/"]]},
+ {n:"Bruno Koba & Daniel Tulha Hochstetler",co:"Astor",what:"SEC-registered AI investment advisor for US retail investors.",prof:"A",loc:"San Francisco",school:"Purdue (Daniel)",cs:"Seed",raised:"US$ 5M seed led by Monashees (Apr 2026)",fund:"closed",read:"later",why:"Strong team, ex Nubank, Monashees, Stripe and Robinhood, but already well known to Brazilian funds.",by:["Rafael Rocha","Ian Ngo","Denis Neto"],li:[["Bruno",L+"bruno-koba/"],["Daniel",L+"daniel-hochstetler/"]]},
+ {n:"Alfonso de los Rios & Antonio Nacoud",co:"Handle",what:"AI agents that automate business work like quotes and reconciliation.",prof:"A",loc:"US",school:"",cs:"Seed",raised:"US$ 6M seed led by a16z (Mar 2026)",fund:"closed",read:"later",why:"Past the stage we are looking for.",by:["Ian Ngo"],li:[["Alfonso",L+"alfonsodelosrios/"],["Antonio",L+"antonionacoud/"]]},
+ {n:"Mike Allan & Isha Bhatnagar",co:"Beltic",what:"Checks the identity of AI agents that make payments, to stop fraud.",prof:"A",loc:"US",school:"",cs:"Seed",raised:"US$ 7.3M seed led by Norwest (Sep 2026)",fund:"closed",read:"later",why:"Past the stage we are looking for. LatAm link to confirm.",by:["Ian Ngo"],li:[["Mike",L+"mikeallanpe/"],["Isha",L+"isha-bhatnagar-profile/"]]},
+ {n:"Ricardo Barros",co:"Tess AI",what:"Platform that runs AI agents for companies, priced per task.",prof:"A",loc:"",school:"",cs:"Seed",raised:"US$ 5M seed led by Hi Ventures (Mar 2026)",fund:"closed",read:"later",why:"Past the stage we are looking for.",by:["Ian Ngo"],li:[["Ricardo",L+"rica-barros/"]]},
+ {n:"Natalia Salcedo Franco",co:"PITZ",what:"AI operating system for independent auto-repair shops.",prof:"B",loc:"Mexico · Brazil",school:"",cs:"Pre-seed",raised:"US$ 2.1M pre-seed (Marathon, Latitud, 500 LatAm)",fund:"closed",read:"later",why:"Experienced founder, co-founded JOKR. Building in LatAm and already well backed.",by:["Rafael Rocha"],li:[["Natalia",L+"nataliasalcedo/"]]},
+ {n:"Lucca Freire",co:"UnblockPay",what:"International payments for businesses, moving between currencies and dollar stablecoins.",prof:"A",loc:"",school:"",cs:"Seed",raised:"US$ 4.5M seed led by Prelude",fund:"closed",read:"later",why:"Right theme, but the seed is already closed.",by:["Rafael Prado"],li:[["Lucca","https://br.linkedin.com/in/lucca-freire-b39758110"]]},
+ {n:"Ed Escobar & Juan Martín Pagella",co:"Kleva",what:"Voice AI collections for lenders across six LatAm countries.",prof:"B",loc:"Mexico City",school:"",cs:"Seed",raised:"US$ 1.55M (Apr 2026), led by Wollef",fund:"closed",read:"outside",why:"Repeat founders building in LatAm for LatAm, with Mercado Pago and Xepelin as clients.",by:["Mariana Castedo"],li:[["Juan Martín",L+"jmpagella/"]]},
+ {n:"Facundo Corsi",co:"UIN",what:"AI engine that helps banks and wallets reactivate dormant users.",prof:"—",loc:"Buenos Aires",school:"",cs:"Seed",raised:"US$ 2M seed (Oct 2026), led by EWA Capital",fund:"closed",read:"outside",why:"Second-time founder, regional rather than profile A or B, round just closed.",by:["Mariana Castedo"],li:[["Facundo","https://ar.linkedin.com/in/facucorsi"]]},
+ {n:"Daniel Magalhães",co:"Vitrify",what:"Brings together data on Brazilian private-credit investments.",prof:"—",loc:"Brazil",school:"",cs:"Pre-seed",raised:"R$ 5M pre-seed",fund:"closed",read:"outside",why:"Built in Brazil for the Brazilian market.",by:["Rafael Prado"],li:[["Daniel","https://br.linkedin.com/in/dmcmagalhaes"]]},
+ {n:"Juliana Freitas",co:"Bull",what:"Helps companies launch credit products, starting with payroll-deducted loans.",prof:"—",loc:"Brazil",school:"",cs:"Seed",raised:"R$ 10M pre-seed led by Canary, then R$ 20M seed",fund:"closed",read:"outside",why:"Built in Brazil for the Brazilian market, already well funded.",by:["Rafael Prado"],li:[["Juliana","https://br.linkedin.com/in/juliana-matos-freitas"]]},
+ {n:"Rafael Guerra",co:"Sinatra AI",what:"Monitors retail orders, payments and inventory to catch failures before they cost revenue.",prof:"—",loc:"Brazil",school:"",cs:"Seed",raised:"R$ 10M seed led by BluStone",fund:"closed",read:"outside",why:"Built in Brazil for the Brazilian market by a 15-year retail veteran.",by:["Rafael Prado"],li:[["Rafael","https://br.linkedin.com/in/rafaelcguerra"]]},
+ {n:"Miguel Monjardim Andrade",co:"Ailum",what:"AI that answers patients and handles scheduling for medical and dental clinics.",prof:"—",loc:"Espírito Santo, Brazil",school:"",cs:"Early",raised:"Angel money",fund:"closed",read:"outside",why:"Young and early, but building in Brazil for Brazilian clinics.",by:["Ellie Park"],li:[["Miguel",L+"miguel-andrade-m-/"]]},
+ {n:"Allan Birman",co:"Venda.ai",what:"AI sales assistants for small and mid-sized stores.",prof:"—",loc:"Brazil (to confirm)",school:"",cs:"Early",raised:"Angels, no fund yet",fund:"closed",read:"outside",why:"Early, with real customers, but appears to be a Brazilian product for Brazilian stores.",by:["Ellie Park"],li:[["Allan",L+"allan-birman-b15715141/"]]},
+ {n:"Diogo Duarte",co:"Plain",what:"AI tools to plan and manage investments, taxes and inheritance.",prof:"—",loc:"Brazil (to confirm)",school:"",cs:"Early",raised:"Angels (Urca Angels and others)",fund:"closed",read:"outside",why:"Fintech with angel backing. Market appears to be Brazil, to confirm.",by:["Ellie Park"],li:[["Diogo",L+"diogo-duarte-msc/"]]},
+ {n:"Chris Cornehl",co:"MeetRox",what:"AI tools for sales teams: CRM filling after calls and pitch quality checks.",prof:"—",loc:"Curitiba, Brazil",school:"",cs:"Early",raised:"Angel investors",fund:"closed",read:"outside",why:"Based in Curitiba, selling to sales teams in Brazil.",by:["Ellie Park"],li:[["Chris",L+"chriscornehl/"]]}
+].map((f,i)=>Object.assign({id:"f"+i,stage:"sourced",call:null},f));
+
+const TEAM=["João Vitor Carvalho","Fred Camargo","Mariana Castedo","Denis Neto","Ian Ngo","Rafael Rocha","Rafael Prado","Ellie Park"];
+const STAGE_LONG={sourced:"A team member found this person and added them. Nobody has contacted them yet.",intro:"We are looking for someone who knows them and can introduce us.",reached:"We sent a message, through an intro or directly, and are waiting for an answer.",replied:"The founder answered and we are setting up a call.",talked:"We had a call. Notes are on the Calls page.",flagged:"Norte told us it wants to meet this founder.",handed:"We introduced the founder to Norte. Norte takes it from here."};
+const VERDICTS=["Worth Norte's time now","Worth a second call","Keep in touch for later","Not a fit"];
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+function h(tag,attrs,...kids){const e=document.createElement(tag);for(const k in (attrs||{})){const v=attrs[k];if(v==null||v===false)continue;if(k==="class")e.className=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v===true?"":v)}for(const c of kids.flat(Infinity)){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(c))}return e}
+const ORDER={top:0,good:1,keep:2,later:3,outside:4};
+const SI=Object.fromEntries(STAGES.map((s,i)=>[s[0],i]));
+function norm(f){f.stage=f.stage||"sourced";f.status=f.status||"active";f.rating=f.rating||0;f.notes=f.notes||[];f.li=f.li||[];f.by=f.by||[];f.call=f.call||null;return f}
+F.forEach(norm);
+const live=()=>F.filter(f=>f.status!=="dropped");
+const dropped=()=>F.filter(f=>f.status==="dropped");
+const sorted=(list)=>[...(list||live())].sort((a,b)=>ORDER[a.read]-ORDER[b.read]||(b.rating-a.rating));
+const count=s=>live().filter(f=>f.stage===s).length;
+const reached=i=>live().filter(f=>SI[f.stage]>=i).length;
+const initials=n=>n.split(" & ")[0].split(" ").filter(Boolean).map(w=>w[0]).filter((c,i,a)=>i===0||i===a.length-1).join("").toUpperCase();
+const today=()=>new Date().toLocaleDateString("en-US",{month:"short",day:"numeric"});
+let stars=new Set();try{stars=new Set(JSON.parse(localStorage.getItem("norte-shortlist")||"[]"))}catch(e){}
+function saveStars(){try{localStorage.setItem("norte-shortlist",JSON.stringify([...stars]))}catch(e){}}
+let me="";try{me=localStorage.getItem("norte-me")||""}catch(e){}
+const av=(f,cls)=>h("span",{class:"av "+(f.status==="dropped"?"":f.read)+(cls?" "+cls:""),"aria-hidden":"true"},initials(f.n));
+const who=f=>h("div",{class:"who"},av(f),h("div",null,h("b",null,f.n),h("span",null,f.co)));
+const rate=(f,big)=>f.rating?h("span",{class:"rate"+(big?" big":""),title:"Team rating "+f.rating+" of 5","aria-label":"Team rating "+f.rating+" of 5"},"★".repeat(f.rating),h("i",null,"★".repeat(5-f.rating))):null;
+function mini(f){if(f.status==="dropped")return h("div",{class:"mini"},h("span",{class:"pill drop"},"Not pursuing"));const i=SI[f.stage];return h("div",{class:"mini"},h("span",{class:"dots","aria-hidden":"true"},STAGES.map((s,k)=>h("i",{class:k<i?"on":k===i?"now":""}))),h("span",null,"Step "+(i+1)+" of 7"),h("small",null,STAGES[i][1]))}
+function journey(current){return h("div",{class:"journey"},STAGES.map(([k,label,desc],i)=>{const n=count(k);
+    const cls=current==null?(n?"has ":"")+(i>0&&reached(i)?"done":""):(i<current?"past done":i===current?"here done":"");
+    return h("button",{class:"step "+cls,onclick:()=>go("pipeline",k),"aria-label":label+(current==null?": "+n+" founders":"")},
+      h("span",{class:"dot"},current==null?String(n):String(i+1)),
+      h("span",{class:"txt"},current==null?h("span",{class:"ord"},"Step "+(i+1)):null,h("strong",null,label),h("small",null,desc)))}))}
+const head=(kicker,title,sub,extra)=>h("div",{class:"head"},h("div",{class:"wrap"},h("span",{class:"kicker"},kicker),h("h1",null,title),sub?h("p",null,sub):null,extra));
+const field=(label,control,wide)=>h("label",{class:"fld"+(wide?" wide":"")},h("span",null,label),control);
+const pick=(id,opts,val)=>{const s=h("select",{id},opts.map(o=>Array.isArray(o)?h("option",{value:o[0]},o[1]):h("option",{value:o},o)));if(val!=null)s.value=val;return s};
+
+/* ---------- saving ---------- */
+let canEdit=false,art=null,saveOff=false;
+function toast(msg,extra){const t=$("#toast");t.textContent="";t.append(h("span",null,msg),extra||"");t.hidden=false;clearTimeout(toast.t);if(!extra)toast.t=setTimeout(()=>t.hidden=true,2600)}
+const snapshot=()=>JSON.stringify({updated:UPDATED,log:LOG,founders:F},null,1);
+function copyText(text,okMsg){const no=()=>{const ta=h("textarea",{readonly:true,class:"dump"});ta.value=text;toast("Select and copy this text:",ta);ta.focus();ta.select()};try{navigator.clipboard.writeText(text).then(()=>toast(okMsg),no)}catch(e){no()}}
+async function save(what){UPDATED=new Date().toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+  const offer=()=>toast(window.claude?"This view can't save. Copy the data and send it to Claude to publish.":"This site is read-only. Copy the data and paste it over data.json in the GitHub repo to publish your changes.",h("button",{class:"btn sm",onclick:()=>copyText(snapshot(),"Data copied")},"Copy data"));
+  if(!art||saveOff){offer();return false}
+  try{await art.publish({"data.json":snapshot()});toast((what||"Saved")+". Everyone sees it now.");return true}
+  catch(e){const c=e&&e.code;if(c==="conflict"){toast("Someone else saved first. Reloading their version.");return false}
+    if(["not_writer","not_granted","capability_disabled","capability_removed","not_declared","consent_required"].includes(c))saveOff=true;offer();return false}}
+function change(what,after){save(what);render();if(after)after()}
+
+/* ---------- pages ---------- */
+const PAGES=[["home","Home"],["pipeline","Pipeline"],["founders","Founders"],["calls","Calls"],["team","Team"],["how","How it works"]];
+const P={};
+P.home=()=>[
+  h("div",{class:"head hero"},h("div",{class:"wrap"},
+    h("div",{class:"copy"},h("span",{class:"kicker"},"NDVC × Norte Ventures · Updated "+UPDATED),
+      h("h1",null,"The founders Norte ",h("em",null,"can't see")," from São Paulo"),
+      h("p",null,"Notre Dame students are finding Latin American founders in the US at the very start of their journey, and bringing them to Norte."),
+      h("div",{class:"cta"},h("button",{class:"btn",onclick:()=>go("pipeline")},"See the pipeline"),h("button",{class:"btn line",onclick:()=>go("founders")},"Browse all founders"))),
+    h("div",{class:"art"},h("img",{src:"art-planet.png",alt:"Norte illustration of a star waving from a planet"}),h("img",{src:"art-pyramid.png",alt:"Norte illustration of a flag on top of a pyramid"})))),
+  h("main",{class:"wrap"},
+    h("div",{class:"nums"},
+      h("div",{class:"num"},h("b",null,String(live().length)),h("span",null,"founders and teams in the pipeline")),
+      h("div",{class:"num"},h("b",null,String(live().filter(f=>f.read==="top").length)),h("span",null,"top picks to call first")),
+      h("div",{class:"num"},h("b",null,String(F.filter(f=>f.call).length)),h("span",null,"calls taken")),
+      h("div",{class:"num"},h("b",null,String(reached(SI.flagged))),h("span",null,"flagged by Norte"))),
+    h("section",{class:"sec"},h("header",null,h("h2",null,"Every founder moves through seven steps"),h("p",null,"The number in each circle is how many founders are at that step today. Tap a step to see who.")),
+      h("div",{class:"card"},journey(null))),
+    h("section",{class:"sec"},h("header",null,h("h2",null,"Who we would call first"),h("p",null,"Our top picks out of everyone sourced so far.")),
+      h("div",{class:"picks"},sorted().filter(f=>f.read==="top").map(f=>h("button",{class:"pick",onclick:()=>go("founder-"+f.id)},who(f),rate(f),h("p",null,f.why),h("footer",null,mini(f),h("span",{class:"by"},"Sourced by "+f.by.join(", "))))))),
+    h("section",{class:"sec"},h("header",null,h("h2",null,"What has happened so far")),
+      h("div",{class:"split"},
+        h("ul",{class:"tl"},LOG.map(([d,t,x])=>h("li",null,h("div",null,h("time",null,d),h("b",null,t),h("p",null,x))))),
+        h("div",{class:"note"},h("h3",null,"Want to meet someone?"),h("p",null,"Open any founder and tap “I want to meet this founder”, or star several and copy your shortlist. Send it to João and we take care of the intro."),h("div",null,h("button",{class:"btn sm",onclick:()=>go("how")},"How it works")))))) ];
+
+P.pipeline=()=>{const out=dropped();return [head("Pipeline","Where we are with each founder","Seven steps, from the first time we find a name to the moment we hand the founder to Norte. Founders move down the page as we make progress."),
+  h("main",{class:"wrap"},
+    h("div",{class:"card"},journey(null)),
+    h("div",{class:"legend"},h("span",null,h("i",{style:"background:var(--yellow)"}),"Top pick"),h("span",null,h("i",{style:"background:var(--gold)"}),"Good fit"),h("span",null,h("i",{style:"background:var(--ink)"}),"Keep close, not a founder yet"),h("span",null,h("i",{style:"background:var(--panel);box-shadow:inset 0 0 0 1px var(--muted)"}),"Later stage or outside the profile")),
+    h("section",{class:"sec",style:"gap:14px"},STAGES.map(([k,label],i)=>{const list=sorted().filter(f=>f.stage===k);
+      return h("div",{class:"lane "+(list.length?"any":"none"),id:"lane-"+k},
+        h("div",{class:"lab"},h("div",{class:"row"},h("span",{class:"dot"},String(list.length)),h("div",null,h("span",{class:"kicker",style:"color:var(--gold-ink)"},"Step "+(i+1)),h("strong",{style:"display:block"},label))),h("p",null,STAGE_LONG[k])),
+        list.length?h("div",{class:"people"},list.map(person)):h("p",{class:"empty"},"No one at this step yet."))}),
+      out.length?h("div",{class:"lane none",id:"lane-dropped"},h("div",{class:"lab"},h("div",{class:"row"},h("span",{class:"dot"},String(out.length)),h("div",null,h("strong",{style:"display:block"},"Not pursuing"))),h("p",null,"We looked and decided not to go further. The reason is on each profile.")),h("div",{class:"people"},out.map(person))):null))]};
+const person=f=>h("button",{class:"person",onclick:()=>go("founder-"+f.id)},av(f),h("span",null,h("b",null,f.n),h("small",null,f.co)));
+
+let filt={q:"",read:"",prof:"",fund:"",stage:"",by:""};
+function prow(f){return h("div",{class:"prow",role:"link",tabindex:"0",onclick:()=>go("founder-"+f.id),onkeydown:e=>{if(e.key==="Enter")go("founder-"+f.id)}},who(f),
+  h("div",{class:"tags"},h("span",{class:"pill "+f.read},READS[f.read]),rate(f),f.prof==="A"||f.prof==="B"?h("span",{class:"pill"},"Profile "+f.prof):null,f.fund==="raising"?h("span",{class:"pill raise"},"Raising now"):null,f.loc?h("span",{class:"pill"},f.loc):null),
+  mini(f),starBtn(f))}
+P.founders=()=>{const list=h("div",{class:"list"}),cnt=h("p");
+  const sel=(key,first,pairs)=>{const s=h("select",{id:"f-"+key,"aria-label":first,oninput:e=>{filt[key]=e.target.value;draw()}},h("option",{value:""},first),pairs.map(([v,l])=>h("option",{value:v},l)));s.value=filt[key];return s};
+  const q=h("input",{id:"f-q",type:"search",placeholder:"Search by name, company, school or city","aria-label":"Search founders",oninput:e=>{filt.q=e.target.value;draw()}});q.value=filt.q;
+  function draw(){const t=filt.q.trim().toLowerCase();
+    const rows=sorted(F).filter(f=>(!t||[f.n,f.co,f.school,f.loc,f.what].join(" ").toLowerCase().includes(t))&&(!filt.read||f.read===filt.read)&&(!filt.prof||f.prof===filt.prof)&&(!filt.fund||f.fund===filt.fund)&&(!filt.stage||(filt.stage==="dropped"?f.status==="dropped":f.status!=="dropped"&&f.stage===filt.stage))&&(!filt.by||f.by.includes(filt.by)));
+    list.textContent="";cnt.textContent=rows.length+" of "+F.length+" shown";rows.forEach(f=>list.append(prow(f)));
+    if(!rows.length)list.append(h("p",{class:"empty"},"No founders match these filters."))}
+  draw();
+  return [head("Founders","Everyone we have sourced","Each person or team, with our read on how well they fit what Norte is looking for. Open anyone for the full profile."),
+    h("main",{class:"wrap"},h("section",{class:"sec"},
+      h("div",{class:"filters"},q,sel("read","Our read: all",Object.entries(READS)),sel("prof","Profile: all",[["A","Profile A"],["B","Profile B"],["—","Neither"]]),sel("fund","Fundraising: all",Object.entries(FUNDS)),sel("stage","Step: all",[...STAGES.map(s=>[s[0],s[1]]),["dropped","Not pursuing"]]),sel("by","Sourced by: all",[...new Set(F.flatMap(f=>f.by))].sort().map(x=>[x,x]))),
+      cnt,list))]};
+
+const callCard=f=>h("div",{class:"card call"},who(f),h("span",{class:"by"},f.call.date+" · call by "+f.call.by),h("p",null,f.call.takeaway),f.call.needs?h("p",null,h("b",null,"What they need: "),f.call.needs):null,h("div",{class:"pills"},f.call.verdict?h("span",{class:"pill top"},f.call.verdict):null),h("div",null,h("button",{class:"btn sm line",onclick:()=>go("founder-"+f.id)},"Open profile")));
+P.calls=()=>{const t=F.filter(f=>f.call);
+  return [head("Calls","Founders we have talked to","Notes from every call the team takes, newest first, so Norte can read what we heard before deciding who to meet."),
+    h("main",{class:"wrap"},t.length?h("section",{class:"sec"},t.reverse().map(callCard)):
+      h("div",{class:"blank"},h("img",{src:"art-chart.png",alt:""}),h("div",null,h("h3",null,"No calls yet. The first ones are being scheduled."),h("p",{style:"color:var(--ink-2)"},"Outreach to the first 10 founders started on Oct 7. Within 24 hours of each call you will see here:"),h("ul",null,h("li",null,"when the call happened and who took it"),h("li",null,"the company's stage and where the fundraise stands"),h("li",null,"a three-line takeaway"),h("li",null,"what the founder needs and how Norte could help"),h("li",null,"our read: worth Norte's time now, later, or not a fit")))))]};
+
+/* ---------- team ---------- */
+function addForm(){const g=id=>($("#"+id).value||"").trim();const out=h("div");
+  const form=h("form",{class:"form",onsubmit:e=>{e.preventDefault();
+    if(!g("a-n")){toast("Add at least the founder's name.");return}
+    const f=norm({id:"n"+Date.now().toString(36),n:g("a-n"),co:g("a-co")||"No company yet",what:g("a-what"),prof:g("a-prof"),loc:g("a-loc"),school:g("a-school"),cs:g("a-cs"),raised:g("a-raised"),fund:g("a-fund"),read:g("a-read"),why:g("a-why"),by:[g("a-by")],li:g("a-li")?[[g("a-n").split(" ")[0],g("a-li")]]:[]});
+    try{localStorage.setItem("norte-me",g("a-by"))}catch(x){}me=g("a-by");
+    if(canEdit&&!saveOff){F.push(f);save(f.n+" added");go("founder-"+f.id)}
+    else{out.textContent="";out.append(h("div",{class:"msg"},h("p",null,h("b",null,"Almost there. "),"Only editors can save to this page, so send this to João and he will add "+f.n.split(" ")[0]+" in one paste."),copyBox("NDVC-FOUNDER:"+JSON.stringify(f),"Send this to João on WhatsApp.")))}}},
+    field("Founder name",h("input",{id:"a-n",required:true,placeholder:"Full name"})),
+    field("Company",h("input",{id:"a-co",placeholder:"Company, “Stealth”, or leave empty"})),
+    field("LinkedIn",h("input",{id:"a-li",type:"url",placeholder:"https://www.linkedin.com/in/…"})),
+    field("Sourced by",pick("a-by",TEAM,me||TEAM[1])),
+    field("Profile",pick("a-prof",[["A","A · Latin American building in the US"],["B","B · US-based, building for LatAm"],["—","Neither"]],"A")),
+    field("Where",h("input",{id:"a-loc",placeholder:"City"})),
+    field("School",h("input",{id:"a-school",placeholder:"University, class year"})),
+    field("Company stage",h("input",{id:"a-cs",placeholder:"Stealth, pre-seed, post-YC…"})),
+    field("Money raised",h("input",{id:"a-raised",placeholder:"None known, US$ 500K pre-seed…"})),
+    field("Fundraising",pick("a-fund",Object.entries(FUNDS),"pre")),
+    field("Our read",pick("a-read",Object.entries(READS),"good")),
+    field("What they are building",h("textarea",{id:"a-what",rows:"2"}),true),
+    field("Why they fit",h("textarea",{id:"a-why",rows:"2"}),true),
+    h("div",{class:"wide"},h("button",{class:"btn",type:"submit"},canEdit?"Add founder":"Create submission")));
+  return h("div",{class:"card"},form,out)}
+function importBox(){const ta=h("textarea",{id:"imp",rows:"3",placeholder:"Paste one or more submissions here (they start with NDVC-FOUNDER:)"});
+  return h("div",{class:"card",style:"display:flex;flex-direction:column;gap:12px"},h("b",null,"Import submissions from the team"),ta,h("div",null,h("button",{class:"btn sm",onclick:()=>{let n=0;(ta.value.match(/NDVC-FOUNDER:\{.*\}/g)||[]).forEach(m=>{try{const f=norm(JSON.parse(m.slice(13)));if(f.n&&!F.some(x=>x.id===f.id)){F.push(f);n++}}catch(e){}});if(n)change(n+(n===1?" founder":" founders")+" imported");else toast("No submissions found in that text.")}},"Import")))}
+P.team=()=>[head("Team","Who sourced whom","Every member's founders in one place, and the form to add new ones."),
+  h("main",{class:"wrap"},
+    h("section",{class:"sec"},h("header",null,h("h2",null,"By team member")),
+      h("div",{class:"members"},TEAM.map(m=>{const mine=sorted(F.filter(f=>f.by.includes(m)));if(!mine.length&&m===TEAM[0])return null;
+        return h("div",{class:"card member"},h("div",{class:"who"},h("span",{class:"av top"},initials(m)),h("div",null,h("b",null,m),h("span",null,mine.length+" sourced · "+mine.filter(f=>f.read==="top"&&f.status!=="dropped").length+" top picks · "+mine.filter(f=>f.call).length+" calls"))),
+          mine.length?h("div",{class:"mlist"},mine.map(f=>h("button",{class:"mrow",onclick:()=>go("founder-"+f.id)},h("span",null,h("b",null,f.n),h("small",null,f.co)),f.status==="dropped"?h("span",{class:"pill drop"},"Not pursuing"):h("span",{class:"pill "+(f.stage==="sourced"?"":"raise")},STAGES[SI[f.stage]][1])))):h("p",{class:"empty"},"No founders yet."))}))),
+    h("section",{class:"sec"},h("header",null,h("h2",null,"Add a founder"),h("p",null,canEdit?"You can edit this page, so new founders are saved right away.":"Fill this in and send the result to João. He adds it to the page.")),addForm()),
+    canEdit?h("section",{class:"sec"},importBox()):h("p",{class:"empty"},"Are you João or another editor? ",h("button",{class:"back",style:"color:var(--gold-ink);text-decoration:underline",onclick:()=>{canEdit=true;render()}},"Turn on editing")))];
+
+P.how=()=>[head("How it works","What this is and how to use it","A live view of the network NDVC is building for Norte this semester. We update it as the team sources, reaches out and takes calls."),
+  h("main",{class:"wrap"},
+    h("section",{class:"sec"},h("header",null,h("h2",null,"Who we are looking for"),h("p",null,"Very early founders: students, stealth, pre-seed. Little or no money raised, and not yet known by every fund in Brazil.")),
+      h("div",{class:"grid2"},h("div",{class:"prof a"},h("small",null,"Profile A"),h("h3",null,"Latin Americans building in the US, for the world or for Latin America")),h("div",{class:"prof b"},h("small",null,"Profile B"),h("h3",null,"US-based founders building for Latin America"))),
+      h("p",{style:"color:var(--ink-2)"},"We leave out companies built in Brazil for Brazil, founders who already raised large rounds, and anyone already in Norte's portfolio.")),
+    h("section",{class:"sec"},h("header",null,h("h2",null,"What each step means")),h("div",{class:"card defs"},STAGES.map(([k,label],i)=>h("div",null,h("span",{class:"dot"},String(i+1)),h("p",null,h("b",null,label),h("span",null,STAGE_LONG[k])))))),
+    h("section",{class:"sec"},h("header",null,h("h2",null,"How to read a founder")),
+      h("div",{class:"grid3"},h("div",{class:"card"},h("b",null,"Our read"),h("p",{style:"color:var(--ink-2)"},"How well they match the profile: top pick, good fit, keep close, later stage or outside profile.")),h("div",{class:"card"},h("b",null,"Team rating"),h("p",{style:"color:var(--ink-2)"},"One to five stars for how strong we think the founder is, updated after we talk to them.")),h("div",{class:"card"},h("b",null,"Not pursuing"),h("p",{style:"color:var(--ink-2)"},"Founders we decided not to go further with, and why. They leave the seven steps.")))),
+    h("section",{class:"sec"},h("header",null,h("h2",null,"How to tell us who you want to meet")),
+      h("div",{class:"grid3"},h("div",{class:"card"},h("b",null,"1. Pick"),h("p",{style:"color:var(--ink-2)"},"Star founders on the Founders page, or open a profile.")),h("div",{class:"card"},h("b",null,"2. Copy"),h("p",{style:"color:var(--ink-2)"},"Tap “Copy list for João”. Your shortlist stays on your own device.")),h("div",{class:"card"},h("b",null,"3. Send"),h("p",{style:"color:var(--ink-2)"},"Paste it to João on WhatsApp. We mark them as flagged and set up the intro.")))))];
+
+/* ---------- founder profile ---------- */
+function editor(f){const g=id=>($("#"+id).value||"").trim();
+  const stars5=h("div",{class:"setrate"},[1,2,3,4,5].map(n=>h("button",{class:n<=f.rating?"on":"","aria-label":n+" of 5",onclick:()=>{f.rating=f.rating===n?0:n;change("Rating saved")}},"★")));
+  return h("section",{class:"sec edit"},h("header",null,h("h2",null,"Edit this founder"),h("p",null,"Only editors see this section. Changes save for everyone, Norte included.")),
+    h("div",{class:"card form"},
+      field("Team rating",stars5),
+      field("Step",pick("e-stage",STAGES.map(s=>[s[0],s[1]]),f.stage)),
+      field("Our read",pick("e-read",Object.entries(READS),f.read)),
+      field("Fundraising",pick("e-fund",Object.entries(FUNDS),f.fund)),
+      h("div",{class:"wide"},h("button",{class:"btn sm",onclick:()=>{f.stage=g("e-stage");f.read=g("e-read");f.fund=g("e-fund");change("Profile updated")}},"Save changes"))),
+    h("div",{class:"card form"},h("b",{class:"wide"},f.status==="dropped"?"Not pursuing":"Stop pursuing this founder"),
+      field("Reason",h("input",{id:"e-why",value:f.dropReason||"",placeholder:"e.g. already raised US$ 5M, not a fit after the call, no reply after three tries"}),true),
+      h("div",{class:"wide acts"},f.status==="dropped"?[h("button",{class:"btn sm",onclick:()=>{f.dropReason=g("e-why");change("Reason saved")}},"Save reason"),h("button",{class:"btn sm line",onclick:()=>{f.status="active";change("Back in the pipeline")}},"Put back in the pipeline")]:h("button",{class:"btn sm dark",onclick:()=>{if(!g("e-why")){toast("Write a short reason first.");return}f.status="dropped";f.dropReason=g("e-why");change("Marked as not pursuing")}},"Mark as not pursuing"))),
+    h("div",{class:"card form"},h("b",{class:"wide"},f.call?"Edit the call":"Log a call"),
+      field("Date",h("input",{id:"c-date",value:f.call?f.call.date:today()})),
+      field("Call taken by",pick("c-by",TEAM,f.call?f.call.by:(me||TEAM[0]))),
+      field("Takeaway",h("textarea",{id:"c-take",rows:"3",placeholder:"Three lines: who they are, what they are building, how it is going"},f.call?f.call.takeaway:""),true),
+      field("What they need",h("input",{id:"c-needs",value:f.call?f.call.needs||"":""}),true),
+      field("Verdict",pick("c-verdict",VERDICTS,f.call?f.call.verdict:VERDICTS[0])),
+      h("div",{class:"wide"},h("button",{class:"btn sm",onclick:()=>{if(!g("c-take")){toast("Write the takeaway first.");return}f.call={date:g("c-date"),by:g("c-by"),takeaway:g("c-take"),needs:g("c-needs"),verdict:g("c-verdict")};if(SI[f.stage]<SI.talked)f.stage="talked";change("Call saved")}},"Save call"))))}
+function founderPage(f){const slot=h("div"),i=SI[f.stage],out=f.status==="dropped";
+  const row=(k,v)=>v?[h("dt",null,k),h("dd",null,v)]:[];
+  const sb=h("button",{class:"btn line",onclick:()=>{toggle(f.id);sb.textContent=stars.has(f.id)?"★ On your shortlist":"☆ Add to shortlist"}},stars.has(f.id)?"★ On your shortlist":"☆ Add to shortlist");
+  const g=id=>($("#"+id).value||"").trim();
+  return [h("div",{class:"head"},h("div",{class:"wrap"},h("button",{class:"back",onclick:()=>go("founders")},"← All founders"),
+      h("div",{class:"phead"},av(f,"lg"),h("div",{style:"min-width:0;display:flex;flex-direction:column;gap:6px"},h("h1",null,f.n),h("p",{style:"color:var(--yellow);font-weight:600"},f.co))),
+      h("div",{class:"pills",style:"margin-top:6px;align-items:center"},out?h("span",{class:"pill drop"},"Not pursuing"):null,h("span",{class:"pill "+f.read},READS[f.read]),h("span",{class:"pill"},f.prof==="A"||f.prof==="B"?"Profile "+f.prof:"Neither profile"),h("span",{class:"pill"},FUNDS[f.fund]||""),rate(f,true)))),
+    h("main",{class:"wrap"},
+      out?h("div",{class:"dropnote"},h("b",null,"We are not pursuing this founder."),h("p",null,f.dropReason||"No reason recorded.")):
+        h("section",{class:"sec"},h("header",null,h("h2",null,"Step "+(i+1)+" of 7: "+STAGES[i][1]),h("p",null,STAGE_LONG[f.stage])),h("div",{class:"card"},journey(i))),
+      h("div",{class:"split"},
+        h("div",{class:"card"},h("dl",{class:"facts"},row("What they do",f.what),row("Where",f.loc),row("School",f.school),row("Company stage",f.cs),row("Money raised",f.raised),row("Sourced by",f.by.join(", ")),
+          h("dt",null,"LinkedIn"),h("dd",null,f.li.length?f.li.map((l,k)=>[k?" · ":"",h("a",{href:l[1],target:"_blank",rel:"noopener"},l[0]+" ↗")]):"Not attached yet"))),
+        h("div",{style:"display:flex;flex-direction:column;gap:16px;min-width:0"},h("div",{class:"read"},h("h3",null,"Our read"),h("p",null,f.why||"Not written yet."),f.rating?h("p",{style:"font-size:16px"},"Team rating: ",rate(f,true)," "+f.rating+" of 5"):null),
+          h("div",{class:"acts"},h("button",{class:"btn",onclick:()=>{slot.textContent="";slot.append(copyBox(msgFor([f])))}},"I want to meet this founder"),sb),slot)),
+      h("section",{class:"sec"},h("header",null,h("h2",null,"Call notes")),f.call?callCardLite(f):h("p",{class:"empty"},"We have not talked to "+f.n.split(" ")[0]+" yet. Notes will appear here after the call.")),
+      h("section",{class:"sec"},h("header",null,h("h2",null,"Notes from the team"),h("p",null,"Short updates as we work on this founder. Norte can read these.")),
+        f.notes.length?h("ul",{class:"tl"},[...f.notes].reverse().map((n,k)=>h("li",null,h("div",null,h("time",null,n.d+" · "+n.by),h("p",null,n.t),canEdit?h("button",{class:"back",style:"color:var(--muted);font-size:13px",onclick:()=>{f.notes.splice(f.notes.length-1-k,1);change("Note removed")}},"Remove"):null)))):h("p",{class:"empty"},"No notes yet."),
+        canEdit?h("div",{class:"card form"},field("Your name",pick("n-by",TEAM,me||TEAM[0])),field("Note",h("textarea",{id:"n-t",rows:"2",placeholder:"e.g. Asked Prof. X for an intro, waiting to hear back"}),true),h("div",{class:"wide"},h("button",{class:"btn sm",onclick:()=>{if(!g("n-t"))return;me=g("n-by");try{localStorage.setItem("norte-me",me)}catch(e){}f.notes.push({d:today(),by:me,t:g("n-t")});change("Note added")}},"Add note"))):null),
+      canEdit?editor(f):null)]}
+const callCardLite=f=>h("div",{class:"card call"},h("span",{class:"by"},f.call.date+" · call by "+f.call.by),h("p",null,f.call.takeaway),f.call.needs?h("p",null,h("b",null,"What they need: "),f.call.needs):null,f.call.verdict?h("div",null,h("span",{class:"pill top"},f.call.verdict)):null);
+
+/* ---------- shortlist ---------- */
+function starBtn(f){const b=h("button",{class:"star","aria-pressed":stars.has(f.id)?"true":"false","aria-label":"Add "+f.n+" to your shortlist",title:"Shortlist",onclick:e=>{e.stopPropagation();toggle(f.id);b.setAttribute("aria-pressed",stars.has(f.id)?"true":"false");b.textContent=stars.has(f.id)?"★":"☆"}},stars.has(f.id)?"★":"☆");return b}
+function msgFor(list){return "Norte would like to meet:\n"+list.map(f=>"- "+f.n+" ("+f.co+")"+(f.li[0]?" "+f.li[0][1]:"")).join("\n")}
+function copyBox(text,hint){const ta=h("textarea",{readonly:true,"aria-label":"Message to send"});ta.value=text;const note=h("p",null,hint||"Send this to João by WhatsApp or email.");
+  return h("div",{class:"msg"},ta,h("div",null,h("button",{class:"btn sm",type:"button",onclick:()=>{const ok=()=>{note.textContent="Copied. Paste it into a message to João."},no=()=>{ta.focus();ta.select();note.textContent="Select the text above and copy it."};try{navigator.clipboard.writeText(text).then(ok,no)}catch(e){no()}}},"Copy message")),note)}
+function toggle(id){stars.has(id)?stars.delete(id):stars.add(id);saveStars();renderBar()}
+function renderBar(){const n=stars.size;$("#bar").hidden=!n;$("#bar-n").textContent=n+(n===1?" founder":" founders")+" on your shortlist"}
+$("#bar-clear").addEventListener("click",()=>{stars.clear();saveStars();renderBar();render()});
+$("#bar-copy").addEventListener("click",()=>copyText(msgFor(F.filter(f=>stars.has(f.id))),"Copied. Paste it into a message to João."));
+
+/* ---------- router + boot ---------- */
+let route="home";
+PAGES.forEach(([k,l])=>$("#nav").append(h("button",{id:"n-"+k,onclick:()=>go(k)},l)));
+$("#brand").addEventListener("click",()=>go("home"));
+function render(anchor){const f=route.startsWith("founder-")?F.find(x=>x.id===route.slice(8)):null;if(!f&&!P[route])route="home";
+  const y=window.scrollY,same=render.last===route;render.last=route;
+  const page=$("#page");page.textContent="";page.append(...(f?founderPage(f):P[route]()));
+  const cur=f?"founders":route;PAGES.forEach(([k])=>{const b=$("#n-"+k);if(k===cur)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+  const el=anchor&&document.getElementById("lane-"+anchor);if(el)el.scrollIntoView({block:"start"});else window.scrollTo(0,same?y:0)}
+function go(r,anchor){route=r;try{history.replaceState(null,"","#"+r)}catch(e){}render(anchor)}
+route=(location.hash||"#home").slice(1);renderBar();render();
+fetch("data.json").then(r=>r.ok?r.json():null).then(d=>{if(d&&Array.isArray(d.founders)){F=d.founders.map(norm);LOG=d.log||LOG;UPDATED=d.updated||UPDATED;render()}}).catch(()=>{});
+if(window.claude&&window.claude.use){
+  window.claude.use("artifact").then(a=>{art=a}).catch(()=>{});
+  window.claude.use("user").then(u=>u?u.canEdit():false).then(ok=>{if(ok){canEdit=true;render()}}).catch(()=>{});
+}
+</script>
+
+</body>
+</html>
