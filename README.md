@@ -1,12 +1,24 @@
 # Norte Founder Network
 
-Live view of the founders NDVC is sourcing for Norte Ventures (fall 2026): pipeline by stage, founder profiles, call notes and the team page.
+A small static site the Notre Dame Venture Capital (NDVC) team uses to track early-stage founders it sources for Norte Ventures (fall 2026). It shows the pipeline by stage, founder profiles, call notes and a team page.
+
+**Why:** seven student members each sourced founders for Norte. A shared page kept the pipeline, ratings and next steps in one place instead of scattered across chats and sheets.
+
+**Status:** in use during the fall 2026 sourcing round. Last data update: Oct 7, 2026 (31 founders in the pipeline, outreach starting).
 
 ## Files
 
-- `index.html`: the whole site (no build step).
+- `index.html`: the whole site (plain HTML/JS, no build step).
 - `data.json`: every founder, the activity log and the "updated" date. **Edit this file to change what the site shows.**
 - `art-*.png`: Norte illustrations.
+
+## Run locally
+
+Open `index.html` through any static server (the page loads `data.json`):
+
+```bash
+npx serve .
+```
 
 ## Updating the data
 
